@@ -12,7 +12,7 @@ function init(bundle, parent, options = {}) {
 
   // Render your app content to the default cylinder surface
   r360.renderToSurface(
-    r360.createRoot('ninja_the_virtual', { /* initial props */ }),
+    r360.createRoot('App', { /* initial props */ }),
     r360.getDefaultSurface()
   );
 
