@@ -10,15 +10,23 @@ import {
 } from 'react-360';
 
 export default class List extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      list: [1, 2, 3]
+    }
+  }
+
   go(n) {
     Linking.openURL('https://example.com/' + n)
   }
 
   render() {
-    const textList = [1, 2, 3 ,4].map(n => {
+    const textList = this.state.list.map(n => {
       return (
-        <VrButton onClick={() => this.go(n)}>
-          <Text style={styles.greeting} key={n} >{n}</Text>
+        <VrButton onClick={() => this.go(n)} key={n}>
+          <Text style={styles.greeting}>{n}</Text>
         </VrButton>
       )
     })
