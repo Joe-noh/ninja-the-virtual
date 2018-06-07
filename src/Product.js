@@ -5,6 +5,7 @@ import {
 import {
   StyleSheet,
   Text,
+  Image,
   View,
   VrButton
 } from 'react-360';
@@ -18,7 +19,7 @@ export default class List extends React.Component {
     }
   }
   go() {
-    Linking.openURL('https://example.com/')
+    Linking.openURL(this.props.product.sampleUrl)
   }
 
   onEnter() {
@@ -30,14 +31,14 @@ export default class List extends React.Component {
   }
 
   render() {
-    const hover = this.state.hover ? styles.hover : {};
+    const hover = this.state.hover ? styles.productHover : {};
 
     return (
-      <View style={[styles.product, hover]}>
-        <VrButton onClick={this.go} onEnter={this.onEnter.bind(this)} onExit={this.onExit.bind(this)}>
-          <Text>Hello Product</Text>
-        </VrButton>
-      </View>
+      <VrButton onClick={this.go} onEnter={this.onEnter.bind(this)} onExit={this.onExit.bind(this)}>
+        <View style={[styles.product, hover]}>
+          <Image source={{uri: this.props.product.sampleImageUrl}} style={styles.productImage}></Image>
+        </View>
+      </VrButton>
     );
   }
 };
@@ -47,10 +48,13 @@ const styles = StyleSheet.create({
     width: 246,
     height: 246,
     margin: 2,
-    backgroundColor: 'blue',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
   },
-  hover: {
-    borderColor: 'white',
-    borderWidth: 2,
-  }
+  productHover: {
+    opacity: 0.9,
+  },
+  productImage: {
+    width: 246,
+    height: 246,
+  },
 });

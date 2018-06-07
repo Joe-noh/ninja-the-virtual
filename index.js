@@ -4,26 +4,25 @@ import {AppRegistry} from 'react-360';
 import Products from './src/Products.js'
 
 export default class App extends React.Component {
-  render() {
-    const products = [
-      {id: 1},
-      {id: 2},
-      {id: 3},
-      {id: 4},
-      {id: 5},
-      {id: 6},
-      {id: 7},
-      {id: 11},
-      {id: 12},
-      {id: 13},
-      {id: 14},
-      {id: 15},
-      {id: 16},
-      {id: 17},
-    ]
+  constructor(props) {
+    super(props);
 
+    this.state = {products: []};
+  }
+
+  componentWillMount () {
+    const url = 'https://ninja-the-virtual.herokuapp.com/products?offset=0&limit=50';
+
+    fetch(url)
+      .then(res => res.json())
+      .then(json => {
+        this.setState({products: json.products});
+      });
+  }
+
+  render() {
     return (
-      <Products products={products}></Products>
+      <Products products={this.state.products}></Products>
     );
   }
 };

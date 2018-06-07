@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
   panel: {
     width: 1000,
     height: 600,
-    backgroundColor: 'rgba(255, 255, 255, 0.4)',
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
