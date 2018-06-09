@@ -1,4 +1,4 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
@@ -18,10 +18,11 @@ const config = {
     rules: [
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader!sass-loader",
-        })
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
+        ],
       },
       {
         test: /\.js$/,
@@ -45,7 +46,10 @@ const config = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']), //cleans the dist folder
-    new ExtractTextPlugin("css/styles.css"), //etracts css to dist/css/styles.css
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css',
+      chunkFilename: '[id].[hash].css',
+    }),
     new HtmlWebpackPlugin({
       title: "Webpack Boilerplate 🤖", //Remove or change to change title in index.html
       template: 'index.ejs'
