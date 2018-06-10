@@ -51,8 +51,8 @@ const config = {
       chunkFilename: '[id].[hash].css',
     }),
     new HtmlWebpackPlugin({
-      title: "Webpack Boilerplate 🤖", //Remove or change to change title in index.html
-      template: 'index.ejs'
+      template: 'index.ejs',
+      inject: 'head',
     })
   ]
 };
