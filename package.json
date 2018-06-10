@@ -4,6 +4,7 @@
   "description": "VR project for suzuri.jp",
   "author": "Joe Honzawa <goflb.jh@gmail.com>",
   "scripts": {
+    "start": "node ./bin/www",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js --mode production"
   },
