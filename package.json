@@ -5,8 +5,7 @@
   "author": "Joe Honzawa <goflb.jh@gmail.com>",
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js --mode production"
+    "dev": "nodemon ./bin/www"
   },
   "keywords": [
     "VR",
@@ -25,6 +24,7 @@
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.8.3",
+    "nodemon": "^1.17.5",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.20.3",
     "webpack": "4.5.0",
