@@ -1,17 +1,17 @@
 {
-  "name": "webpack-boilerplate",
-  "version": "1.1.0",
-  "description": "Webpack 3 boilerplate with babel and sass",
-  "author": "Jesper Orb <jesperorb@gmail.com> (https://jesperorb.com/)",
-  "main": "index.js",
+  "name": "ninja-the-virtual",
+  "version": "1.0.0",
+  "description": "VR project for suzuri.jp",
+  "author": "Joe Honzawa <goflb.jh@gmail.com>",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js --mode production"
   },
   "keywords": [
-    "webpack",
-    "babel",
-    "sass"
+    "VR",
+    "Virtual Reality",
+    "suzuri",
+    "ninja"
   ],
   "license": "MIT",
   "devDependencies": {
@@ -31,6 +31,13 @@
     "webpack-dev-server": "^3.1.3"
   },
   "dependencies": {
-    "babel-polyfill": "6.26.0"
+    "babel-polyfill": "6.26.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "node-sass-middleware": "0.11.0",
+    "pug": "2.0.0-beta11"
   }
 }
