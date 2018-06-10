@@ -1,5 +1,13 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  a-scene
+    a-assets
+      img#city(crossorigin src='https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg')
+      img#cubes-thumb(crossorigin src='https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg')
+
+    a-sky#image-360(radius='30' src='#city')
+
+    a-entity(layout='type: box; columns: 28; plane: xy; margin: 1.5' position='-20 -15 -7')
+      each n in new Array(760)
+        a-entity(geometry='primitive: plane; height: 1; width: 1' material='shader: flat; src: #cubes-thumb')
