@@ -13,6 +13,9 @@
     "suzuri",
     "ninja"
   ],
+  "engines": {
+    "node": "10.3.0"
+  },
   "license": "MIT",
   "devDependencies": {
     "nodemon": "^1.17.5"
