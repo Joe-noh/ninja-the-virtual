@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  a-scene
+    a-assets
+      img#city(src='/images/atmosphere.jpg')
+      each p in products
+        img(id='product'+p.id src=p.sampleImageUrl)
+
+    a-sky#image-360(radius='30' src='#city')
+
+    a-entity(layout='type: box; columns: 1; plane: xy; margin: 1.4' position='0 -30 -7')
+      each p in products
+        a-entity(geometry='primitive: plane; height: 1; width: 1' material='shader: flat; src: #product'+p.id)
