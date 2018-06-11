@@ -24,7 +24,8 @@ router.get('/', function(req, res, next) {
       const json = JSON.parse(body);
 
       const products = json.products.map(product => {
-        return {...product, sampleImageUrl: `/image?url=${encodeURIComponent(product.sampleImageUrl)}`}
+        const url = product.sampleImageUrl;
+        return {...product, sampleImageUrl: `/image?url=${encodeURIComponent(url)}`}
       });
       res.render('index', {products});
     });

@@ -3,9 +3,9 @@ extends layout
 block content
   a-scene
     a-assets
-      img#city(crossorigin src='https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg')
+      img#city(src='/images/atmosphere.jpg')
       each p in products
-        img(id='product'+p.id crossorigin src=p.sampleImageUrl)
+        img(id='product'+p.id src=p.sampleImageUrl)
 
     a-sky#image-360(radius='30' src='#city')
 
